@@ -11,7 +11,7 @@ dotenv
 ```
 
 ### Environment Variables
-GENIUS_TOKEN="xxx": This is your Genius API token. It is loaded from a .env file.
+GENIUS_TOKEN="xxx": This is your [Genius API](http://genius.com/api-clients) token. It is loaded from a .env file.
 
 
 ### Usage

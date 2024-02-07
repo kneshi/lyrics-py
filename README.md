@@ -9,6 +9,7 @@ re
 sys
 dotenv
 ```
+Check the repo of [lyricsgenius](https://github.com/johnwmillr/LyricsGenius)
 
 ### Environment Variables
 GENIUS_TOKEN="xxx": This is your [Genius API](http://genius.com/api-clients) token. It is loaded from a .env file.

@@ -1,5 +1,6 @@
 # getlyrics.py
 This Python script uses the Genius API to fetch lyrics of all songs by a specified artist and saves them.
+
 Check the repo of [lyricsgenius](https://github.com/johnwmillr/LyricsGenius).
 
 ### Dependencies

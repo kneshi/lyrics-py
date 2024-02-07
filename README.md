@@ -1,5 +1,6 @@
 # getlyrics.py
 This Python script uses the Genius API to fetch lyrics of all songs by a specified artist and saves them.
+Check the repo of [lyricsgenius](https://github.com/johnwmillr/LyricsGenius).
 
 ### Dependencies
 ```
@@ -9,10 +10,9 @@ re
 sys
 dotenv
 ```
-Check the repo of [lyricsgenius](https://github.com/johnwmillr/LyricsGenius)
 
 ### Environment Variables
-GENIUS_TOKEN="xxx": This is your [Genius API](http://genius.com/api-clients) token. It is loaded from a .env file.
+GENIUS_TOKEN="xxx": This is your [Genius API](http://genius.com/api-clients) token, loaded from a `.env` file.
 
 
 ### Usage
@@ -38,11 +38,17 @@ sys
 ### Parameters
 
 `lyrics_language`: The language to use for tokenization.
-`absolute_lyrics_file_path`: The file path pattern to use for reading files (using wildcards, and use quote)
+
+`absolute_lyrics_file_path`: The file path pattern to use for reading files (using wildcards)
+
 `lyrics_num_common`: The number of most common words to return.
 
 ### Usage
 To use this script run :
-```
+```bash
 python3 getstats.py <lyrics_language> '<absolute_lyrics_file_path>' <lyrics_num_common>
 ``` 
+e.g: 
+```bash
+python3 getstats.py french '/home/john/rick-lyrics/*.txt' 50
+```

@@ -1,0 +1,4 @@
+.env
+nltk_data
+__pycache__
+data

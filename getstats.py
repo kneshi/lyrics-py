@@ -6,12 +6,11 @@ from nltk.tokenize import word_tokenize
 import os
 import sys
 import ssl
-import ssl
 
 
 if len(sys.argv) != 4:
     print(sys.argv)
-    print("Usage: python getstats.py <lyrics_language> '<absolute_lyrics_file_path/*.txt>' <lyrics_num_common>")
+    print("Usage: python getstats.py <lyrics_language> '</absolute/lyrics/file/path/*.txt>' <lyrics_num_common>")
     sys.exit(1)
 
 lyrics_language = sys.argv[1]

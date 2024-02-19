@@ -5,16 +5,20 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import os
 import sys
+import ssl
+import ssl
+
 
 if len(sys.argv) != 4:
     print(sys.argv)
-    print("Usage: python getstats.py <lyrics_language> '<absolute_lyrics_file_path>' <lyrics_num_common>")
+    print("Usage: python getstats.py <lyrics_language> '<absolute_lyrics_file_path/*.txt>' <lyrics_num_common>")
     sys.exit(1)
 
 lyrics_language = sys.argv[1]
 absolute_lyrics_file_path = sys.argv[2]
 lyrics_num_common = int(sys.argv[3])
 
+file_path_pattern = absolute_lyrics_file_path
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')  
 os.makedirs(nltk_data_path, exist_ok=True) 
 nltk.data.path.append(nltk_data_path)
@@ -26,6 +30,8 @@ def download_nltk_data():
         nltk.data.find('corpora/stopwords')
     except LookupError:
         print("Téléchargement des données nécessaires de NLTK...")
+        _create_unverified_https_context = ssl._create_unverified_context
+        ssl._create_default_https_context = _create_unverified_https_context
         nltk.download('punkt', download_dir=nltk_data_path, quiet=False)
         nltk.download('stopwords', download_dir=nltk_data_path, quiet=False)
         print("Données téléchargées.")
@@ -62,7 +68,6 @@ def additional_analyses(word_counts):
     average_word_length = sum(len(word) * count for word, count in word_counts.items()) / total_words
     return unique_words, average_word_length
 
-file_path_pattern = absolute_lyrics_file_path
 
 lyrics = read_files(file_path_pattern)
 
